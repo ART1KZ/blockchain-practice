@@ -23,8 +23,8 @@ contract Payments {
 
     mapping(address => Balance) balances;
 
-    function getMyBalance() public view returns (uint256) {
-        return msg.sender.balance;
+    function getBalance() public view returns (uint256) {
+        return address(this).balance;
     }
 
     function pay(string memory message) public payable {
