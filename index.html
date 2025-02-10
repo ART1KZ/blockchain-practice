@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Interaction</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Token Interaction Form</h1>
+
+        <div class="section">
+            <label for="account">Your Ethereum Address:</label>
+            <input type="text" id="account" placeholder="Enter your address" readonly />
+            <button onclick="connectWallet()">Connect Wallet</button>
+        </div>
+
+        <hr />
+
+        <div class="section">
+            <h2>Token Information</h2>
+            <button onclick="getTokenName()">Get Token Name</button>
+            <p id="tokenNameResult"></p>
+            <button onclick="getTokenSymbol()">Get Token Symbol</button>
+            <p id="tokenSymbolResult"></p>
+            <button onclick="getTokenDecimals()">Get Token Decimals</button>
+            <p id="tokenDecimalsResult"></p>
+            <button onclick="getTotalSupply()">Get Total Supply</button>
+            <p id="totalSupplyResult"></p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+            <h2>Check Balance</h2>
+            <button onclick="checkBalance()">Check Balance</button>
+            <p id="balanceResult"></p>
+        </div>
+
+        <div class="section">
+            <h2>Transfer Tokens</h2>
+            <label for="toAddress">Recipient Address:</label>
+            <input type="text" id="toAddress" placeholder="Enter recipient address" />
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount" />
+            <button onclick="transferTokens()">Transfer</button>
+            <p id="transferResult"></p>
+        </div>
+
+        <div class="section">
+            <h2>Approve Tokens</h2>
+            <label for="spenderAddress">Spender Address:</label>
+            <input type="text" id="spenderAddress" placeholder="Enter spender address" />
+            <label for="approveAmount">Amount:</label>
+            <input type="number" id="approveAmount" placeholder="Enter amount" />
+            <button onclick="approveTokens()">Approve</button>
+            <p id="approveResult"></p>
+        </div>
+
+        <div class="section">
+            <h2>Allowance</h2>
+            <label for="ownerAddress">Owner Address:</label>
+            <input type="text" id="ownerAddress" placeholder="Enter owner address" />
+            <label for="spenderAddressAllowance">Spender Address:</label>
+            <input type="text" id="spenderAddressAllowance" placeholder="Enter spender address" />
+            <button onclick="checkAllowance()">Check Allowance</button>
+            <p id="allowanceResult"></p>
+        </div>
+
+        <div class="section">
+            <h2>Mint Tokens (Only Owner)</h2>
+            <label for="mintToAddress">Recipient Address:</label>
+            <input type="text" id="mintToAddress" placeholder="Enter recipient address" />
+            <label for="mintAmount">Amount:</label>
+            <input type="number" id="mintAmount" placeholder="Enter amount" />
+            <button onclick="mintTokens()">Mint</button>
+            <p id="mintResult"></p>
+        </div>
+
+        <div class="section">
+            <h2>Burn Tokens</h2>
+            <label for="burnAmount">Amount:</label>
+            <input type="number" id="burnAmount" placeholder="Enter amount" />
+            <button onclick="burnTokens()">Burn</button>
+            <p id="burnResult"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
